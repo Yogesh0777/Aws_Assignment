@@ -1,0 +1,57 @@
+Q. What is cidr?
+Ans. Classless inter-domain routing (CIDR) is a set of Internet protocol (IP) standards that is used to create unique identifiers for networks and individual 
+     devices. The host identifier is used to determine which host or device on the network should receive incoming information packets.
+     
+Q.  What is vpc?     
+Ans.  A virtual private cloud (VPC) is a virtual network dedicated to your AWS account. It is logically isolated from other virtual networks in the AWS Cloud.
+      You can launch your AWS resources, such as Amazon EC2 instances, into your VPC.A subnet is a range of IP addresses in your VPC.
+      
+ Q.  What is NAT Gateway?
+ Ans.  A NAT gateway is a Network Address Translation (NAT) service. You can use a NAT gateway so that instances in a private subnet can connect to 
+       services outside your VPC but external services cannot initiate a connection with those instances. You route traffic from the NAT gateway 
+       to the internet gateway for the VPC.
+       
+  Q.   What is internet Gateway?
+  Ans. An Internet Gateway (IGW) is a logical connection between an Amazon VPC and the Internet. It is not a physical device. Only one can be associated
+       with each VPC. It does not limit the bandwidth of Internet connectivity. (The only limitation on bandwidth is the size of the Amazon EC2 instance,
+       and it applies to all traffic — internal to the VPC and out to the Internet.)
+       
+  Q.   Diffrence between Nat And Internet Gateway?
+  Ans. VPC does not have an Internet Gateway, then the resources in the VPC cannot be accessed from the Internet (unless the traffic flows via a corporate network 
+       and VPN/Direct Connect).
+       An Internet Gateway allows resources within your VPC to access the internet, and vice versa. In order for this to happen, there needs to be a routing 
+       table entry allowing a subnet to access the IGW.
+       
+       A NAT Gateway does something similar, but with two main differences:
+       It allows resources in a private subnet to access the internet (think yum updates, external database connections, wget calls, OS patch, etc).
+       It only works one way. The internet at large cannot get through your NAT to your private resources unless you explicitly allow it.
+       
+   Q.  What is Private Subnet?
+   Ans.  A private subnet sets that route to a NAT instance. Private subnet instances only need a private ip and internet traffic is routed through the NAT
+         in the public subnet. You could also have no route to 0.0. 0.0/0 to make it a truly private subnet with no internet access in or out.
+         
+   Q.   What is public Subnet?
+   Ans. Public subnets have a default route to an Internet Gateway; private subnets do not. So, to determine if a given subnet is public or private, you need to 
+        describe the route table that is associated with that subnet. That will tell you the routes and you can test for a 0.0.
+        
+   Q.   What is ec2? and its uses.
+   Ans. Amazon Elastic Compute Cloud (Amazon EC2) provides scalable computing capacity in the Amazon Web Services (AWS) Cloud. Using Amazon EC2 eliminates 
+        your need to invest in hardware up front, so you can develop and deploy applications faster.
+        
+   Q.   ssh command public instance?
+   Ans.  ssh -i publickey.pem ubuntu@ip address
+   
+   Q.   What is role in IAM?
+   Ans. An IAM role is an IAM entity that defines a set of permissions for making AWS service requests. IAM roles are not associated with a specific 
+        user or group. Instead, trusted entities assume roles, such as IAM users, applications, or AWS services such as EC2.
+        
+   Q.   What is policies ?
+   Ans. A policy is an object in AWS that, when associated with an entity or resource, defines their permissions. AWS evaluates these policies when
+        a principal, such as a user, makes a request. Permissions in the policies determine whether the request is allowed or denied. Most policies are stored
+        in AWS as JSON documents.
+        
+   Q.   What is s3 bucket?
+   Ans. An Amazon S3 bucket is a public cloud storage resource available in Amazon Web Services' (AWS) Simple Storage Service (S3), an object storage
+        offering. Amazon S3 buckets, which are similar to file folders, store objects, which consist of data 
+   
+   Ans. 
